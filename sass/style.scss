@@ -1,3 +1,136 @@
-h1{
-    background-color: blueviolet;
+// Variables
+$purple :#9356DC;
+$pink : #FF79DA;
+$green : #99E2D0;
+$grey-for-progress:#F6F6F6;
+
+$titlefont: 'Shrikhand', sans-serif;
+$textfont: 'Roboto', sans-serif;
+
+//Mixins
+@mixin 
+
+body{
+    display: flex;
+    justify-content: center;
+    margin: 0px;
 }
+
+.main-container{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header{
+    margin: 10px;
+    text-align: center;
+    height: 63px;
+    img{
+        width: 162px;
+        height: 44px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+// texte de localitation
+.section-localisation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EAEAEA;
+    height: 50px;
+    
+    p{
+        color: #353535;
+        font-family: $textfont;
+        font-weight: bold;
+    }
+    
+    i{
+        margin-right: 10px;
+    }
+}
+
+// texte de présentation
+.section-presentation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    h1{
+        font-family: $textfont;
+        text-align: center;
+        font-weight: 700;
+        font-size: 30px;
+        margin-bottom: 0;
+    }
+
+    p{
+        font-family: $textfont;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    a{
+        font-size: 20px;
+        font-family: $textfont;
+        text-decoration: none;
+        color: #FFF;
+        border-radius: 10% / 50%;
+        background-color: $purple;
+        padding: 15px;
+    }
+    
+}
+
+.section-progress{
+    display: flex;
+    flex-direction: column;
+
+    h2{
+        font: $textfont;
+    }
+
+    .article-steps{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }    
+    .step{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: stretch;
+        width: 90%;
+        height: 72px;
+        background-color: $grey-for-progress;
+        border: none;
+        border-radius: 20px;
+    }
+
+    .fa-stack{
+        font-size: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: -10px;
+    }
+    .fa-circle{
+        color: $purple;
+    }
+    .fa-1 {
+        color:#FFF
+    }
+
+    .article__span-vertical-align{
+        margin:auto;
+    }
+
+    p{
+        margin-left: auto;
+        margin-right: auto;
+        font-family: $textfont;
+    }
+    
+}
+

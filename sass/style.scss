@@ -2,13 +2,13 @@
 $purple :#9356DC;
 $pink : #FF79DA;
 $green : #99E2D0;
-$grey-for-progress:#F6F6F6;
+$lightgrey:#F6F6F6;
+$numbericoncolor:#FFF;
 
 $titlefont: 'Shrikhand', sans-serif;
 $textfont: 'Roboto', sans-serif;
 
 //Mixins
-@mixin 
 
 body{
     display: flex;
@@ -57,16 +57,20 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: $lightgrey;
+    padding-bottom: 50px;
     
     h1{
+        width: 80%;
         font-family: $textfont;
         text-align: center;
         font-weight: 700;
-        font-size: 30px;
+        font-size: 25px;
         margin-bottom: 0;
     }
 
     p{
+        margin-top: 10px;
         font-family: $textfont;
         text-align: center;
         font-size: 20px;
@@ -78,7 +82,7 @@ header{
         text-decoration: none;
         color: #FFF;
         border-radius: 10% / 50%;
-        background-color: $purple;
+        background: linear-gradient($pink,$purple);
         padding: 15px;
     }
     
@@ -89,7 +93,7 @@ header{
     flex-direction: column;
 
     h2{
-        font: $textfont;
+        font-family: $textfont;
     }
 
     .article-steps{
@@ -104,9 +108,10 @@ header{
         justify-content: stretch;
         width: 90%;
         height: 72px;
-        background-color: $grey-for-progress;
+        background-color: $lightgrey;
         border: none;
         border-radius: 20px;
+        margin-bottom: 10px;
     }
 
     .fa-stack{
@@ -118,8 +123,15 @@ header{
     .fa-circle{
         color: $purple;
     }
+
     .fa-1 {
-        color:#FFF
+        color:$numbericoncolor;
+    }
+    .fa-2 {
+        color:$numbericoncolor;
+    }
+    .fa-3 {
+        color:$numbericoncolor;
     }
 
     .article__span-vertical-align{
@@ -127,10 +139,17 @@ header{
     }
 
     p{
-        margin-left: auto;
         margin-right: auto;
         font-family: $textfont;
     }
-    
+    .fa-mobile-screen-button{
+        color:#7E7E7E;
+    }
+    .fa-list-ul{
+        color:#7E7E7E;
+    }
+    .fa-store{
+        color: $purple;
+    }
 }
 

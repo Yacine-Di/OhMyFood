@@ -3,13 +3,28 @@ $purple :#9356DC;
 $pink : #FF79DA;
 $green : #99E2D0;
 $lightgrey:#F6F6F6;
+$darkgrey: #353535;
 $numbericoncolor:#FFF;
 
 $titlefont: 'Shrikhand', sans-serif;
 $textfont: 'Roboto', sans-serif;
 
 //Mixins
+@mixin linkstyle{
+    text-decoration: none;
+    font-family: $textfont;
+}
 
+@mixin restaurant-text-style{
+    margin: 0;
+    color: #000;
+}
+
+@mixin shadow ($element-alpha){
+    box-shadow: 0px 0px 5px 5px rgba($color: #000, $alpha: $element-alpha);
+}
+
+//Scss
 body{
     display: flex;
     justify-content: center;
@@ -44,7 +59,7 @@ body{
     height: 50px;
     
     .section-localisation__text{
-        color: #353535;
+        color: $darkgrey;
         font-family: $textfont;
         font-weight: bold;
     }
@@ -54,13 +69,14 @@ body{
     }
 }
 
-// bloc présentation
+// Bloc présentation
 .section-presentation{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: $lightgrey;
-    padding-bottom: 50px;
+    height: 290px;
     
     .section-presentation__title{
         width: 80%;
@@ -68,24 +84,32 @@ body{
         text-align: center;
         font-weight: 700;
         font-size: 25px;
-        margin-bottom: 0;
+        margin: 0;
     }
 
     .section-presentation__text{
+        text-align: center;
+        width: 95%;
         margin-top: 10px;
         font-family: $textfont;
         font-weight: 100;
-        text-align: center;
         font-size: 20px;
     }
 
     .section-presentation__link{
+        @include linkstyle;
+        @include shadow(0.1);
         font-size: 20px;
-        font-family: $textfont;
-        text-decoration: none;
         color: #FFF;
         border-radius: 10% / 50%;
         padding: 15px;
+        transition: 0.4s;
+        opacity: 1;
+
+        &:hover{
+            opacity: 0.8;
+            @include shadow(0.2);
+        }
     }
     
     .section-presentation__link--gradient{
@@ -97,7 +121,7 @@ body{
 .section-progress{
     display: flex;
     flex-direction: column;
-    width: 95%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 
@@ -118,10 +142,10 @@ body{
         justify-content: stretch;
         width: 90%;
         height: 72px;
-        background-color: $lightgrey;
         border: none;
         border-radius: 20px;
         margin-bottom: 20px;
+        background-color: $lightgrey;
 
         .fa-stack{
             font-size: 10px;
@@ -171,6 +195,9 @@ body{
         width: 100%;
     }
 
+    .section-restaurants__title{
+        font-family: $textfont;
+    }
     .section-restaurants__link{
         display: flex;
         flex-direction: column;
@@ -178,7 +205,8 @@ body{
         margin-bottom: 20px;
         background-color: #FFF;
         border-radius: 20px;
-        text-decoration: none;
+
+        @include linkstyle;
     }
 
     .section-restaurants__visual{
@@ -226,20 +254,51 @@ body{
     }
 
     .section-restaurants__nickname{
-        margin: 0;
-        font-family: $textfont;
-        color: #000;
+        @include restaurant-text-style;
     }
 
     .section-restaurants__name{
-        margin: 0;
-        font-family: $textfont;
-        color: #000;
+        @include restaurant-text-style;
     }
 
     .section-restaurants__like{
         margin-top: auto;
         margin-bottom: auto;
         margin-right: 20px;
+    }
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: $darkgrey;
+    padding: 20px;
+
+    .footer__text{
+        margin: 0;
+        font-family: $titlefont;
+        font-weight: 500;
+        font-size: 20px;
+        color: #FFF;
+    }
+
+    .footer__list{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+    }
+    
+    .footer__listelement{
+        margin-top: 10px;
+    }
+    
+    .footer__link{
+        @include linkstyle;
+        color: #FFF;
+    }
+
+    .footer__icon{
+        margin-right: 5px;
     }
 }

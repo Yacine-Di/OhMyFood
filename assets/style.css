@@ -95,9 +95,14 @@ body {
 }
 @media (min-width: 768px) {
   .section-progress {
-    width: 70%;
+    width: 90%;
     max-width: 1100px;
     margin-bottom: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-progress {
+    width: 70%;
   }
 }
 .section-progress .section-progress__title {
@@ -120,6 +125,7 @@ body {
   align-items: center;
   justify-content: stretch;
   width: 90%;
+  max-width: 360px;
   height: 72px;
   border: none;
   border-radius: 20px;
@@ -168,9 +174,15 @@ body {
 }
 @media (min-width: 768px) {
   .section-restaurants {
-    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+@media (min-width: 1024px) {
+  .section-restaurants {
     padding-left: 15%;
     padding-right: 15%;
+    width: 100%;
   }
 }
 .section-restaurants .section-restaurants__article-restaurants {

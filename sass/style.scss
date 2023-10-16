@@ -138,7 +138,6 @@ body{
 
     @media (min-width: 1024px) {
         width: 70%;
-        
     }
 
     .section-progress__title{
@@ -175,7 +174,7 @@ body{
             width: 30%;
             max-width: 325px;
         }
-        
+
         .fa-stack{
             font-size: 10px;
             margin-top: auto;
@@ -218,6 +217,7 @@ body{
     padding: 20px;
 
     @media (min-width: 768px){
+        width: 100%;
         padding-left: 5%;
         padding-right: 5%;
     }
@@ -317,7 +317,14 @@ body{
         margin-bottom: auto;
         margin-right: 20px;
     }
-}
+
+    .fa-heart::before{
+        color: transparent;
+        background-clip: text;
+        background-image: linear-gradient($purple, $pink);
+    }
+
+}   
 
 .footer{
     display: flex;

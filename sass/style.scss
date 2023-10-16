@@ -1,3 +1,387 @@
-h1{
-    background-color: blueviolet;
+// Variables
+$purple :#9356DC;
+$pink : #FF79DA;
+$green : #99E2D0;
+$lightgrey:#F6F6F6;
+$darkgrey: #353535;
+$numbericoncolor:#FFF;
+
+$titlefont: 'Shrikhand', sans-serif;
+$textfont: 'Roboto', sans-serif;
+
+//Mixins
+@mixin linkstyle{
+    text-decoration: none;
+    font-family: $textfont;
+}
+
+@mixin restaurant-text-style{
+    margin: 0;
+    color: #000;
+}
+
+@mixin shadow ($element-alpha){
+    box-shadow: 0px 0px 5px 5px rgba($color: #000, $alpha: $element-alpha);
+}
+
+//Scss
+body{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.main-container{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header{
+    margin: 10px;
+    height: 63px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+    .header_logo{
+        width: 162px;
+        height: 34px;
+    }
+}
+
+// bloc localitation
+.section-localisation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #EAEAEA;
+    height: 50px;
+    
+    .section-localisation__text{
+        color: $darkgrey;
+        font-family: $textfont;
+        font-weight: bold;
+    }
+    
+    .section-localisation__icon{
+        margin-right: 10px;
+    }
+}
+
+// Bloc présentation
+.section-presentation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $lightgrey;
+    height: 290px;
+    
+    .section-presentation__title{
+        width: 80%;
+        font-family: $textfont;
+        text-align: center;
+        font-weight: 700;
+        font-size: 25px;
+        margin: 0;
+
+        //queries pour tout sauf mobile portrait/paysage
+        @media (min-width : 768px ) {
+            font-size: 40px;
+        }
+    }
+
+    .section-presentation__text{
+        text-align: center;
+        width: 95%;
+        margin-top: 10px;
+        font-family: $textfont;
+        font-weight: 100;
+        font-size: 20px;
+    }
+
+    .section-presentation__link{
+        @include linkstyle;
+        @include shadow(0.1);
+        font-size: 20px;
+        color: #FFF;
+        border-radius: 10% / 50%;
+        padding: 15px;
+        transition: 0.4s;
+        opacity: 1;
+
+        &:hover{
+            opacity: 0.8;
+            @include shadow(0.2);
+        }
+    }
+    
+    .section-presentation__link--gradient{
+        background: linear-gradient($pink,$purple);
+    }
+}
+
+//Bloc fonctionnement
+.section-progress{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: 768px) {
+        width: 90%;
+        max-width: 1100px;
+        margin-bottom: 20px;
+    }
+
+    @media (min-width: 1024px) {
+        width: 70%;
+    }
+
+    .section-progress__title{
+        font-family: $textfont;
+    }
+
+    .section-progress__steps{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    } 
+
+    .section-progress__step{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: stretch;
+        width: 90%;
+        max-width: 360px;
+        height: 72px;
+        border: none;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        background-color: $lightgrey;
+
+        @include shadow(0.1);
+
+        @media (min-width: 768px) {
+            width: 30%;
+            max-width: 325px;
+        }
+
+        .fa-stack{
+            font-size: 10px;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: -10px;
+        }
+        .fa-circle{
+            color: $purple;
+        }
+    
+        .section-progress__number--white {
+            color:$numbericoncolor;
+        }
+
+        .section-progress__icon{
+            margin:auto;
+        }
+    
+        .section-progress__text{
+            margin-right: auto;
+            font-family: $textfont;
+        }
+
+        .section-progress__icon--grey{
+            color:#7E7E7E;
+        }
+
+        .section-progress__icon--purple{
+            color: $purple;
+        }
+    }
+}
+
+//bloc restaurants
+.section-restaurants{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: $lightgrey;
+    padding: 20px;
+
+    @media (min-width: 768px){
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    @media (min-width: 1024px) {
+        padding-left: 15%;
+        padding-right: 15%;
+        width: 100%;
+    }
+    
+    .section-restaurants__article-restaurants{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+
+        @media (min-width: 768px){
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    .section-restaurants__title{
+        font-family: $textfont;
+    }
+    
+    .section-restaurants__link{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        background-color: #FFF;
+        border-radius: 20px;
+
+        @include linkstyle;
+
+        @media (min-width: 768px){
+            width: 45%;
+            margin-bottom: 50px;
+        }
+    }
+
+    .section-restaurants__visual{
+        width: 100%;
+        position: relative;
+    }
+
+    .section-restaurants__picture{
+        height: 175px;
+        object-fit: fill;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        width: 100%;
+    }
+
+    .section-restaurants__new{
+        color: #008766;
+        padding: 10px;
+        border-radius: 2px;
+        background-color: $green;
+        font-family: $textfont;
+        font-weight: 700;
+        position: absolute;
+        margin: 0;
+        top: 15px;
+        right: 15px;
+    }
+    .section-restaurants__new--visibility{
+        visibility: hidden;
+    }
+
+    .section-restaurants__text{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 76px;
+    }
+    
+    .section-restaurants__names{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 10px;
+        padding-left: 15px;
+    }
+
+    .section-restaurants__nickname{
+        @include restaurant-text-style;
+    }
+
+    .section-restaurants__name{
+        @include restaurant-text-style;
+    }
+
+    .section-restaurants__like{
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 20px;
+    }
+
+    .fa-heart::before{
+        color: transparent;
+        background-clip: text;
+        background-image: linear-gradient($purple, $pink);
+    }
+
+}   
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: $darkgrey;
+    padding: 20px;
+
+    @media (min-width: 768px) {
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    .footer__text{
+        margin: 0;
+        font-family: $titlefont;
+        font-weight: 500;
+        font-size: 20px;
+        color: #FFF;
+
+        @media (min-width: 768px){
+            margin-left: 50px;
+        }
+    }
+
+    .footer__list{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+
+        @media (min-width: 768px) {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 0;
+        }
+    }
+    
+    .footer__listelement{
+        margin-top: 10px;
+
+        @media (min-width: 768px) {
+            margin: 0;
+            margin-left: 20px;
+
+            &:nth-child(3){
+                margin-left: 40px;
+            }
+        }
+    }
+    
+    .footer__link{
+        @include linkstyle;
+        color: #FFF;
+    }
+
+    .footer__icon{
+        margin-right: 5px;
+    }
 }

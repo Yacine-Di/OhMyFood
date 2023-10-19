@@ -81,6 +81,7 @@ body{
 
         @media (min-width: 1024px) {
             width: 40%;
+            min-width: 350px;
         }
     }
     
@@ -91,7 +92,9 @@ body{
     }
 
     @keyframes fade{
-        100% {opacity: 1;}
+        100% {
+            opacity: 1;
+        }
     }
 
     .article-items{
@@ -102,8 +105,8 @@ body{
         margin-bottom: 10px;
         max-width: 640px;
 
-        opacity: 0;
-        animation: fade 3s forwards;
+        /*opacity: 0;
+        animation: fade 2s forwards;*/
     }
 
     .article-items:nth-child(2){
@@ -137,14 +140,26 @@ body{
         border-radius: 15px;
         height: 70px;
         padding: 10px;
+        padding-right: 0px;
         margin-bottom: 10px;
 
         @include shadow(0.05);
+
+        @media (min-width: 1024px) {      
+            &:hover > .article-item_priceandcheck > .article-item__fa--green{
+                margin-right: 0px;
+            }
+        }
     }
 
     
+    .fa-circle-check{
+        display: inline-block;
+        color: #FFF;
+    }
+
     .article-item__names{
-        
+        width: 80%;
     }
     
     .article-item__firstname{
@@ -152,11 +167,9 @@ body{
         margin: 0;
         font-size: 16px;
         margin-bottom: 5px;
-        width: 250px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        position: relative;
     } 
     
     .article-item__nameaffix{
@@ -164,21 +177,42 @@ body{
         font-weight: 100;
         font-size: 14px;
         margin: 0;
-        width: 250px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap; 
     }
-    
+
+    .article-item_priceandcheck{
+        display: flex;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
     .article-item__price{
         font-family: $textfont;
         font-weight: 700;
-        margin-bottom: 0;
+        margin-bottom: 10px;
         margin-top: auto;
+        margin-right: 10px;
     }
+    
+    .article-item__fa--green{
+        background-color: $green;
+        height: 70px;
+        width: 60px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: -60px;
+        transition: margin 0.25s ease-in-out;
+    }
+
     .section-menu__command{
         @include linkstyle;
         @include shadow(0.1);
+
         font-size: 14px;
         color: #FFF;
         width: 150px;
@@ -200,9 +234,6 @@ body{
         }
     }
 }
-
-
-
 
 .footer{
     display: flex;

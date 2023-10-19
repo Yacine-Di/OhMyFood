@@ -60,6 +60,7 @@ body {
 @media (min-width: 1024px) {
   .section-menu .article-nameandlike {
     width: 40%;
+    min-width: 350px;
   }
 }
 .section-menu .article-nameandlike__name {
@@ -79,8 +80,8 @@ body {
   width: 90%;
   margin-bottom: 10px;
   max-width: 640px;
-  opacity: 0;
-  animation: fade 3s forwards;
+  /*opacity: 0;
+  animation: fade 2s forwards;*/
 }
 .section-menu .article-items:nth-child(2) {
   animation-delay: 1s;
@@ -110,35 +111,63 @@ body {
   border-radius: 15px;
   height: 70px;
   padding: 10px;
+  padding-right: 0px;
   margin-bottom: 10px;
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
+}
+@media (min-width: 1024px) {
+  .section-menu .article-item:hover > .article-item_priceandcheck > .article-item__fa--green {
+    margin-right: 0px;
+  }
+}
+.section-menu .fa-circle-check {
+  display: inline-block;
+  color: #FFF;
+}
+.section-menu .article-item__names {
+  width: 80%;
 }
 .section-menu .article-item__firstname {
   font-family: "Roboto", sans-serif;
   margin: 0;
   font-size: 16px;
   margin-bottom: 5px;
-  width: 250px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  position: relative;
 }
 .section-menu .article-item__nameaffix {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   font-size: 14px;
   margin: 0;
-  width: 250px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.section-menu .article-item_priceandcheck {
+  display: flex;
+  box-sizing: border-box;
+  overflow: hidden;
+}
 .section-menu .article-item__price {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   margin-top: auto;
+  margin-right: 10px;
+}
+.section-menu .article-item__fa--green {
+  background-color: #99E2D0;
+  height: 70px;
+  width: 60px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -60px;
+  transition: margin 0.25s ease-in-out;
 }
 .section-menu .section-menu__command {
   text-decoration: none;

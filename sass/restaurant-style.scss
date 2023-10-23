@@ -34,10 +34,19 @@ body{
     display: flex;
     justify-content: center;
     align-items:center;
+    position: relative;
 
     .header_logo{
         width: 195px;
         height: 34px;
+    }
+    
+    .header__back{
+        position: absolute;
+        top: 22px;
+        left: 20px;
+        border: none;
+        background: transparent;
     }
 }
 
@@ -117,9 +126,6 @@ body{
     }
     .article-items:nth-child(4){
         animation-delay: 3s;
-    }
-    .article-items:nth-child(5){
-        animation-delay: 4s;
     }
     
     .article-items__type{

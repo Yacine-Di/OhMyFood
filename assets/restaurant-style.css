@@ -13,10 +13,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .header .header_logo {
   width: 195px;
   height: 34px;
+}
+.header .header__back {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  border: none;
+  background: transparent;
 }
 
 .picture {
@@ -91,9 +99,6 @@ body {
 }
 .section-menu .article-items:nth-child(4) {
   animation-delay: 3s;
-}
-.section-menu .article-items:nth-child(5) {
-  animation-delay: 4s;
 }
 .section-menu .article-items__type {
   font-family: "Roboto", sans-serif;

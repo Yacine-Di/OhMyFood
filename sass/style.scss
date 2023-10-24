@@ -312,19 +312,24 @@ body{
         @include restaurant-text-style;
     }
 
-    .section-restaurants__like{
+    .fa-stack{
         margin-top: auto;
         margin-bottom: auto;
-        margin-right: 20px;
+        margin-right: 10px;
+        width: 1.5em;
     }
 
-    .fa-heart::before{
+    .fa-solid::before{
         color: transparent;
+        background-image: linear-gradient($pink,$purple);
         background-clip: text;
-        background-image: linear-gradient($purple, $pink);
+        opacity: 0;
+        transition: 1s;
     }
 
-   
+    .fa-solid:hover::before{
+        opacity: 1;
+    }
 }   
 
 .footer{

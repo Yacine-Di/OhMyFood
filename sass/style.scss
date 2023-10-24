@@ -31,6 +31,40 @@ body{
     margin: 0;
 }
 
+.loader{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-image: linear-gradient($purple,$pink);
+
+    animation: fade 3s ease forwards;
+}
+
+@keyframes fade {
+    100%{
+        opacity: 0; 
+        z-index: -1;
+    }
+}
+
+.loader__style{
+    height: 100px;
+    width: 100px;
+    border: 15px solid #FFF;
+    border-top-color: $green;
+    border-radius: 50%;
+    animation: loading 3s ease;
+}
+
+@keyframes loading {
+    from {transform: rotate(0turn);}
+    to {transform: rotate(3turn);}
+}
+
 .main-container{
     width: 100%;
     box-sizing: border-box;

@@ -101,20 +101,28 @@ body{
     }
 
     .fa-stack{
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 10px;
         width: 1.5em;
     }
 
     .fa-stack > .fa-solid::before{
         color: transparent;
-        background-image: linear-gradient($pink,$purple);
         background-clip: text;
-        opacity: 0;
 
-        transition: 1s;
     }
 
-    .fa-stack > .fa-solid:hover::before{
-        opacity: 1;
+    @media (min-width: 1024px) {
+        .fa-stack > .fa-solid:hover::before{
+            opacity: 1;
+        }
+
+        .fa-stack > .fa-solid::before{
+            background-image: linear-gradient($pink,$purple);
+            opacity: 0;
+            transition: 1s;
+        }
     }
 
     @keyframes fade{

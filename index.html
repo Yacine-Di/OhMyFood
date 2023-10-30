@@ -20,9 +20,12 @@
 </head>
 
 <body>
+    <article class="loader">
+        <div class="loader__style"></div>
+    </article>
     <section class="main-container">
         <header class="header">
-            <img class="header_logo" src="assets/images/logo/ohmyfood.png" alt="logo ohmyfood">
+            <img class="header__logo" src="assets/images/logo/ohmyfood.png" alt="logo ohmyfood">
         </header>
         <section class="section-localisation">
             <p class="section-localisation__text"><i class="fa-solid fa-location-dot section-localisation__icon"></i>
@@ -80,7 +83,10 @@
                             <h3 class="section-restaurants__nickname">La palette du goût</h3>
                             <p class="section-restaurants__name">Ménilmontant</p>
                         </article>
-                        <i class="section-restaurants__like fa fa-regular fa-heart fa-xl"></i>
+                        <span class="fa-stack fa-2x">
+                            <i class="fa-regular fa-heart fa-sm fa-stack-1x"></i>
+                            <i class="fa-solid fa-heart fa-sm fa-stack-1x"></i>
+                        </span>
                     </article>
                 </a>
                 <a class="section-restaurants__link" href="restaurants/la-note-enchantee.html">
@@ -94,7 +100,10 @@
                             <h3 class="section-restaurants__nickname">La note enchantée</h3>
                             <p class="section-restaurants__name">Charonne</p>
                         </article>
-                        <i class="section-restaurants__like fa-regular fa-heart fa-xl"></i>
+                        <span class="fa-stack fa-2x">
+                            <i class="fa-regular fa-heart fa-sm fa-stack-1x"></i>
+                            <i class="fa-solid fa-heart fa-sm fa-stack-1x"></i>
+                        </span>
                     </article>
                 </a>
                 <a class="section-restaurants__link" href="restaurants/a-la-francaise.html">
@@ -108,7 +117,10 @@
                             <h3 class="section-restaurants__nickname">À la française</h3>
                             <p class="section-restaurants__name">Cité rouge</p>
                         </article>
-                        <i class="section-restaurants__like fa-regular fa-heart fa-xl"></i>
+                        <span class="fa-stack fa-2x">
+                            <i class="fa-regular fa-heart fa-sm fa-stack-1x"></i>
+                            <i class="fa-solid fa-heart fa-sm fa-stack-1x"></i>
+                        </span>
                     </article>
                 </a>
                 <a class="section-restaurants__link" href="restaurants/le-delice-des-sens.html">
@@ -122,7 +134,10 @@
                             <h3 class="section-restaurants__nickname">Le déclide des sens</h3>
                             <p class="section-restaurants__name">Folie-Méricourt</p>
                         </article>
-                        <i class="section-restaurants__like fa-regular fa-heart fa-xl"></i>
+                        <span class="fa-stack fa-2x">
+                            <i class="fa-regular fa-heart fa-sm fa-stack-1x"></i>
+                            <i class="fa-solid fa-heart fa-sm fa-stack-1x"></i>
+                        </span>
                     </article>
                 </a>
             </article>
@@ -134,8 +149,8 @@
                             class="fa-solid fa-utensils fa-fw footer__icon"></i>Proposer un restaurant</a></li>
                 <li class="footer__listelement"><a class="footer__link" href="#"><i
                             class="fa-solid fa-handshake-angle fa-fw footer__icon"></i>Devenir partenaire</a></li>
-                <li class="footer__listelement"><a class="footer__link" href="#">Mention légales</a></li>
-                <li class="footer__listelement"><a class="footer__link" href="#">Contact</a></li>
+                <li class="footer__listelement"><a class="footer__link" href="#">Mentions légales</a></li>
+                <li class="footer__listelement"><a class="footer__link" href="mailto:contact@ohmyfood.com">Contact</a></li>
             </ul>
         </footer>
     </section>

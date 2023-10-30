@@ -31,19 +31,52 @@ body{
     margin: 0;
 }
 
+.loader{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-image: linear-gradient(to bottom right, $pink, $purple);
+
+    animation: fade 3s ease forwards;
+}
+
+@keyframes fade {
+    100%{
+        opacity: 0; 
+        z-index: -1;
+    }
+}
+
+.loader__style{
+    height: 100px;
+    width: 100px;
+    border: 15px solid #FFF;
+    border-top-color: $green;
+    border-radius: 50%;
+    animation: loading 3s ease;
+}
+
+@keyframes loading {
+    from {transform: rotate(0turn);}
+    to {transform: rotate(3turn);}
+}
+
 .main-container{
     width: 100%;
     box-sizing: border-box;
 }
 
 .header{
-    margin: 10px;
     height: 63px;
     display: flex;
     justify-content: center;
     align-items:center;
 
-    .header_logo{
+    .header__logo{
         width: 162px;
         height: 34px;
     }
@@ -118,7 +151,7 @@ body{
     }
     
     .section-presentation__link--gradient{
-        background: linear-gradient($pink,$purple);
+        background: linear-gradient(to bottom right,$pink,$purple);
     }
 }
 
@@ -312,19 +345,30 @@ body{
         @include restaurant-text-style;
     }
 
-    .section-restaurants__like{
+    .fa-stack{
         margin-top: auto;
         margin-bottom: auto;
-        margin-right: 20px;
+        margin-right: 10px;
+        width: 1.5em;
     }
 
-    .fa-heart::before{
+    .fa-solid::before{
         color: transparent;
         background-clip: text;
-        background-image: linear-gradient($purple, $pink);
+        -webkit-background-clip: text;
     }
 
-   
+    @media (min-width: 1024px) {
+        .fa-solid:hover::before{
+            opacity: 1;
+        }
+
+        .fa-solid::before{
+            background-image: linear-gradient($pink,$purple);
+            opacity: 0;
+            transition: 1s;
+        }
+    }
 }   
 
 .footer{
@@ -347,6 +391,7 @@ body{
 
         @media (min-width: 768px){
             margin-left: 50px;
+            padding-right: 50px;
         }
     }
 

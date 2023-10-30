@@ -36,12 +36,12 @@ body{
     align-items:center;
     position: relative;
 
-    .header__logo{
+    &__logo{
         width: 195px;
         height: 34px;
     }
     
-    .header__back{
+    &__back{
         position: absolute;
         top: 22px;
         left: 20px;
@@ -100,14 +100,14 @@ body{
             width: 40%;
             min-width: 350px;
         }
+
+        &__name{
+            font-family: $titlefont;
+            font-size: 28px;
+            margin: 0;
+        }
     }
     
-    .article-nameandlike__name{
-        font-family: $titlefont;
-        font-size: 28px;
-        margin: 0;
-    }
-
     .fa-stack{
         margin-top: auto;
         margin-bottom: auto;
@@ -139,6 +139,7 @@ body{
         }
     }
 
+    //Categories  (Entree, Plats, Dessert)
     .article-items{
         display: flex;
         flex-direction: column;
@@ -149,29 +150,30 @@ body{
 
         opacity: 0;
         animation: fade 2s forwards;
+
+        &:nth-child(2){
+            animation-delay: 1s;
+        }
+        &:nth-child(3){
+            animation-delay: 2s;
+        }
+        &:nth-child(4){
+            animation-delay: 3s;
+        }
+        
+        &__type{
+            font-family: $textfont;
+            font-size: 16px;
+            font-weight: 100;
+        }
+    
+        &__type--green{
+            text-decoration: underline solid 3px $green;
+            text-underline-offset: 5px;
+        }
     }
 
-    .article-items:nth-child(2){
-        animation-delay: 1s;
-    }
-    .article-items:nth-child(3){
-        animation-delay: 2s;
-    }
-    .article-items:nth-child(4){
-        animation-delay: 3s;
-    }
-    
-    .article-items__type{
-        font-family: $textfont;
-        font-size: 16px;
-        font-weight: 100;
-    }
-
-    .article-items__type--green{
-        text-decoration: underline solid 3px $green;
-        text-underline-offset: 5px;
-    }
-    
+    //Plat present dans les categories
     .article-item{
         display: flex;
         flex-direction: row;
@@ -188,69 +190,70 @@ body{
         @include shadow(0.05);
 
         @media (min-width: 1024px) {      
-            &:hover > .article-item_priceandcheck > .article-item__fa--green{
+            &:hover > .article-item__priceandcheck > .article-item__fa--green{
                 margin-right: 0px;
             }
         }
-    }
+
+        .fa-circle-check{
+            display: inline-block;
+            color: #FFF;
+        }
     
-    .fa-circle-check{
-        display: inline-block;
-        color: #FFF;
+        &__names{
+            width: 80%;
+        }
+        
+        &__firstname{
+            font-family: $textfont;
+            margin: 0;
+            font-size: 16px;
+            margin-bottom: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        } 
+        
+        &__nameaffix{
+            font-family: $textfont;
+            font-weight: 100;
+            font-size: 14px;
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap; 
+        }
+    
+        &__priceandcheck{
+            display: flex;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+    
+        &__price{
+            font-family: $textfont;
+            font-weight: 700;
+            margin-bottom: 10px;
+            margin-top: auto;
+            margin-right: 10px;
+        }
+        
+        &__fa--green{
+            background-color: $green;
+            height: 70px;
+            width: 60px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: -60px;
+            transition: margin 0.25s ease-in-out;
+        }
     }
 
-    .article-item__names{
-        width: 80%;
-    }
-    
-    .article-item__firstname{
-        font-family: $textfont;
-        margin: 0;
-        font-size: 16px;
-        margin-bottom: 5px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    } 
-    
-    .article-item__nameaffix{
-        font-family: $textfont;
-        font-weight: 100;
-        font-size: 14px;
-        margin: 0;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap; 
-    }
-
-    .article-item_priceandcheck{
-        display: flex;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-
-    .article-item__price{
-        font-family: $textfont;
-        font-weight: 700;
-        margin-bottom: 10px;
-        margin-top: auto;
-        margin-right: 10px;
-    }
-    
-    .article-item__fa--green{
-        background-color: $green;
-        height: 70px;
-        width: 60px;
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: -60px;
-        transition: margin 0.25s ease-in-out;
-    }
-
-    .section-menu__command{
+    //Bouton commander
+    &__command{
         @include linkstyle;
         @include shadow(0.1);
 
@@ -262,16 +265,16 @@ body{
         text-align: center;
         border-radius: 10% / 50%;
         padding: 15px;
-    }
-    
-    .section-menu__command--gradient{
-        background: linear-gradient(to bottom right,$pink,$purple);
-        transition: 0.4s;
-        opacity: 1;
 
-        &:hover{
-            opacity: 0.8;
-            @include shadow(0.2);
+        &--gradient{
+            background: linear-gradient(to bottom right,$pink,$purple);
+            transition: 0.4s;
+            opacity: 1;
+    
+            &:hover{
+                opacity: 0.8;
+                @include shadow(0.2);
+            }
         }
     }
 }
@@ -287,7 +290,7 @@ body{
         align-items: center;
     }
 
-    .footer__text{
+    &__text{
         margin: 0;
         font-family: $titlefont;
         font-weight: 500;
@@ -300,7 +303,7 @@ body{
         }
     }
 
-    .footer__list{
+    &__list{
         list-style-type: none;
         padding: 0;
         margin: 0;
@@ -314,7 +317,7 @@ body{
         }
     }
     
-    .footer__listelement{
+    &__listelement{
         margin-top: 10px;
 
         @media (min-width: 768px) {
@@ -327,12 +330,12 @@ body{
         }
     }
     
-    .footer__link{
+    &__link{
         @include linkstyle;
         color: #FFF;
     }
 
-    .footer__icon{
+    &__icon{
         margin-right: 5px;
     }
 }

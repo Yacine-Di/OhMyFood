@@ -39,7 +39,7 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 100;
-    background-image: linear-gradient($purple,$pink);
+    background-image: linear-gradient(to bottom right, $pink, $purple);
 
     animation: fade 3s ease forwards;
 }
@@ -71,13 +71,12 @@ body{
 }
 
 .header{
-    margin: 10px;
     height: 63px;
     display: flex;
     justify-content: center;
     align-items:center;
 
-    .header_logo{
+    .header__logo{
         width: 162px;
         height: 34px;
     }
@@ -152,7 +151,7 @@ body{
     }
     
     .section-presentation__link--gradient{
-        background: linear-gradient($pink,$purple);
+        background: linear-gradient(to bottom right,$pink,$purple);
     }
 }
 
@@ -392,6 +391,7 @@ body{
 
         @media (min-width: 768px){
             margin-left: 50px;
+            padding-right: 50px;
         }
     }
 

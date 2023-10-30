@@ -114,7 +114,7 @@ body{
     .fa-stack > .fa-solid::before{
         color: transparent;
         background-clip: text;
-
+        -webkit-background-clip: text;
     }
 
     @media (min-width: 1024px) {

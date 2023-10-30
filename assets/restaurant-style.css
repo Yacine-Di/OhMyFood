@@ -90,6 +90,7 @@ body {
 .section-menu .fa-stack > .fa-solid::before {
   color: transparent;
   background-clip: text;
+  -webkit-background-clip: text;
 }
 @media (min-width: 1024px) {
   .section-menu .fa-stack > .fa-solid:hover::before {

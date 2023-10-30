@@ -50,7 +50,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.header .header__logo {
+.header__logo {
   width: 162px;
   height: 34px;
 }
@@ -63,12 +63,12 @@ body {
   background-color: #EAEAEA;
   height: 50px;
 }
-.section-localisation .section-localisation__text {
+.section-localisation__text {
   color: #353535;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
 }
-.section-localisation .section-localisation__icon {
+.section-localisation__icon {
   margin-right: 10px;
 }
 
@@ -80,7 +80,7 @@ body {
   background-color: #F6F6F6;
   height: 290px;
 }
-.section-presentation .section-presentation__title {
+.section-presentation__title {
   width: 80%;
   font-family: "Roboto", sans-serif;
   text-align: center;
@@ -89,11 +89,11 @@ body {
   margin: 0;
 }
 @media (min-width: 768px) {
-  .section-presentation .section-presentation__title {
+  .section-presentation__title {
     font-size: 40px;
   }
 }
-.section-presentation .section-presentation__text {
+.section-presentation__text {
   text-align: center;
   width: 95%;
   margin-top: 10px;
@@ -101,7 +101,7 @@ body {
   font-weight: 100;
   font-size: 20px;
 }
-.section-presentation .section-presentation__link {
+.section-presentation__link {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
@@ -112,12 +112,12 @@ body {
   transition: 0.4s;
   opacity: 1;
 }
-.section-presentation .section-presentation__link:hover {
+.section-presentation__link--gradient {
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+}
+.section-presentation__link:hover {
   opacity: 0.8;
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
-}
-.section-presentation .section-presentation__link--gradient {
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
 }
 
 .section-progress {
@@ -139,21 +139,21 @@ body {
     width: 70%;
   }
 }
-.section-progress .section-progress__title {
+.section-progress__title {
   font-family: "Roboto", sans-serif;
 }
-.section-progress .section-progress__steps {
+.section-progress__steps {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 @media (min-width: 768px) {
-  .section-progress .section-progress__steps {
+  .section-progress__steps {
     flex-direction: row;
     justify-content: space-between;
   }
 }
-.section-progress .section-progress__step {
+.section-progress__step {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -168,34 +168,34 @@ body {
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 768px) {
-  .section-progress .section-progress__step {
+  .section-progress__step {
     width: 30%;
     max-width: 325px;
   }
 }
-.section-progress .section-progress__step .fa-stack {
+.section-progress__step .fa-stack {
   font-size: 10px;
   margin-top: auto;
   margin-bottom: auto;
   margin-left: -10px;
 }
-.section-progress .section-progress__step .fa-circle {
+.section-progress__step .fa-circle {
   color: #9356DC;
 }
-.section-progress .section-progress__step .section-progress__number--white {
+.section-progress__step__number--white {
   color: #FFF;
 }
-.section-progress .section-progress__step .section-progress__icon {
+.section-progress__step__icon {
   margin: auto;
 }
-.section-progress .section-progress__step .section-progress__text {
+.section-progress__step__text {
   margin-right: auto;
   font-family: "Roboto", sans-serif;
 }
-.section-progress .section-progress__step .section-progress__icon--grey {
+.section-progress__step__icon--grey {
   color: #7E7E7E;
 }
-.section-progress .section-progress__step .section-progress__icon--purple {
+.section-progress__step__icon--purple {
   color: #9356DC;
 }
 
@@ -220,22 +220,22 @@ body {
     width: 100%;
   }
 }
-.section-restaurants .section-restaurants__article-restaurants {
+.section-restaurants__article-restaurants {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
 }
 @media (min-width: 768px) {
-  .section-restaurants .section-restaurants__article-restaurants {
+  .section-restaurants__article-restaurants {
     flex-direction: row;
     flex-wrap: wrap;
   }
 }
-.section-restaurants .section-restaurants__title {
+.section-restaurants__title {
   font-family: "Roboto", sans-serif;
 }
-.section-restaurants .section-restaurants__link {
+.section-restaurants__link {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -246,23 +246,23 @@ body {
   font-family: "Roboto", sans-serif;
 }
 @media (min-width: 768px) {
-  .section-restaurants .section-restaurants__link {
+  .section-restaurants__link {
     width: 45%;
     margin-bottom: 50px;
   }
 }
-.section-restaurants .section-restaurants__visual {
+.section-restaurants__visual {
   width: 100%;
   position: relative;
 }
-.section-restaurants .section-restaurants__picture {
+.section-restaurants__picture {
   height: 175px;
   object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   width: 100%;
 }
-.section-restaurants .section-restaurants__new {
+.section-restaurants__new {
   color: #008766;
   padding: 10px;
   border-radius: 2px;
@@ -274,27 +274,27 @@ body {
   top: 15px;
   right: 15px;
 }
-.section-restaurants .section-restaurants__new--visibility {
+.section-restaurants__new--visibility {
   visibility: hidden;
 }
-.section-restaurants .section-restaurants__text {
+.section-restaurants__text {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 76px;
 }
-.section-restaurants .section-restaurants__names {
+.section-restaurants__names {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   padding: 10px;
   padding-left: 15px;
 }
-.section-restaurants .section-restaurants__nickname {
+.section-restaurants__nickname {
   margin: 0;
   color: #000;
 }
-.section-restaurants .section-restaurants__name {
+.section-restaurants__name {
   margin: 0;
   color: #000;
 }
@@ -332,7 +332,7 @@ body {
     align-items: center;
   }
 }
-.footer .footer__text {
+.footer__text {
   margin: 0;
   font-family: "Shrikhand", sans-serif;
   font-weight: 500;
@@ -340,43 +340,43 @@ body {
   color: #FFF;
 }
 @media (min-width: 768px) {
-  .footer .footer__text {
+  .footer__text {
     margin-left: 50px;
     padding-right: 50px;
   }
 }
-.footer .footer__list {
+.footer__list {
   list-style-type: none;
   padding: 0;
   margin: 0;
   margin-top: 10px;
 }
 @media (min-width: 768px) {
-  .footer .footer__list {
+  .footer__list {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-top: 0;
   }
 }
-.footer .footer__listelement {
+.footer__listelement {
   margin-top: 10px;
 }
 @media (min-width: 768px) {
-  .footer .footer__listelement {
+  .footer__listelement {
     margin: 0;
     margin-left: 20px;
   }
-  .footer .footer__listelement:nth-child(3) {
+  .footer__listelement:nth-child(3) {
     margin-left: 40px;
   }
 }
-.footer .footer__link {
+.footer__link {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   color: #FFF;
 }
-.footer .footer__icon {
+.footer__icon {
   margin-right: 5px;
 }
 

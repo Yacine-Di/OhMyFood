@@ -76,7 +76,7 @@ body{
     justify-content: center;
     align-items:center;
 
-    .header__logo{
+    &__logo{
         width: 162px;
         height: 34px;
     }
@@ -91,13 +91,13 @@ body{
     background-color: #EAEAEA;
     height: 50px;
     
-    .section-localisation__text{
+    &__text{
         color: $darkgrey;
         font-family: $textfont;
         font-weight: bold;
     }
     
-    .section-localisation__icon{
+    &__icon{
         margin-right: 10px;
     }
 }
@@ -111,7 +111,7 @@ body{
     background-color: $lightgrey;
     height: 290px;
     
-    .section-presentation__title{
+    &__title{
         width: 80%;
         font-family: $textfont;
         text-align: center;
@@ -125,7 +125,7 @@ body{
         }
     }
 
-    .section-presentation__text{
+    &__text{
         text-align: center;
         width: 95%;
         margin-top: 10px;
@@ -134,7 +134,7 @@ body{
         font-size: 20px;
     }
 
-    .section-presentation__link{
+    &__link{
         @include linkstyle;
         @include shadow(0.1);
         font-size: 20px;
@@ -144,14 +144,14 @@ body{
         transition: 0.4s;
         opacity: 1;
 
+        &--gradient{
+            background: linear-gradient(to bottom right, $pink, $purple);
+        }
+
         &:hover{
             opacity: 0.8;
             @include shadow(0.2);
         }
-    }
-    
-    .section-presentation__link--gradient{
-        background: linear-gradient(to bottom right,$pink,$purple);
     }
 }
 
@@ -173,11 +173,11 @@ body{
         width: 70%;
     }
 
-    .section-progress__title{
+    &__title{
         font-family: $textfont;
     }
 
-    .section-progress__steps{
+    &__steps{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -188,7 +188,7 @@ body{
         }
     } 
 
-    .section-progress__step{
+    &__step{
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -218,24 +218,24 @@ body{
             color: $purple;
         }
     
-        .section-progress__number--white {
+        &__number--white {
             color:$numbericoncolor;
         }
 
-        .section-progress__icon{
+        &__icon{
             margin:auto;
         }
     
-        .section-progress__text{
+        &__text{
             margin-right: auto;
             font-family: $textfont;
         }
 
-        .section-progress__icon--grey{
+        &__icon--grey{
             color:#7E7E7E;
         }
 
-        .section-progress__icon--purple{
+        &__icon--purple{
             color: $purple;
         }
     }
@@ -261,7 +261,7 @@ body{
         width: 100%;
     }
     
-    .section-restaurants__article-restaurants{
+    &__article-restaurants{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -273,11 +273,11 @@ body{
         }
     }
 
-    .section-restaurants__title{
+    &__title{
         font-family: $textfont;
     }
     
-    .section-restaurants__link{
+    &__link{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -293,12 +293,12 @@ body{
         }
     }
 
-    .section-restaurants__visual{
+    &__visual{
         width: 100%;
         position: relative;
     }
 
-    .section-restaurants__picture{
+    &__picture{
         height: 175px;
         object-fit: cover;
         border-top-left-radius: 20px;
@@ -306,7 +306,7 @@ body{
         width: 100%;
     }
 
-    .section-restaurants__new{
+    &__new{
         color: #008766;
         padding: 10px;
         border-radius: 2px;
@@ -318,18 +318,19 @@ body{
         top: 15px;
         right: 15px;
     }
-    .section-restaurants__new--visibility{
+
+    &__new--visibility{
         visibility: hidden;
     }
 
-    .section-restaurants__text{
+    &__text{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         height: 76px;
     }
     
-    .section-restaurants__names{
+    &__names{
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -337,11 +338,11 @@ body{
         padding-left: 15px;
     }
 
-    .section-restaurants__nickname{
+    &__nickname{
         @include restaurant-text-style;
     }
 
-    .section-restaurants__name{
+    &__name{
         @include restaurant-text-style;
     }
 
@@ -382,7 +383,7 @@ body{
         align-items: center;
     }
 
-    .footer__text{
+    &__text{
         margin: 0;
         font-family: $titlefont;
         font-weight: 500;
@@ -395,7 +396,7 @@ body{
         }
     }
 
-    .footer__list{
+    &__list{
         list-style-type: none;
         padding: 0;
         margin: 0;
@@ -409,7 +410,7 @@ body{
         }
     }
     
-    .footer__listelement{
+    &__listelement{
         margin-top: 10px;
 
         @media (min-width: 768px) {
@@ -422,12 +423,12 @@ body{
         }
     }
     
-    .footer__link{
+    &__link{
         @include linkstyle;
         color: #FFF;
     }
 
-    .footer__icon{
+    &__icon{
         margin-right: 5px;
     }
 }

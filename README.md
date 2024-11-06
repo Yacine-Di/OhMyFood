@@ -24,7 +24,7 @@ During this project I learnt how to use SCSS and how to display smooth animation
 
 ## Screenshots
 
-![App Screenshot](assets/screenshot/ohmyfood1.png)
+![App Screenshot](assets/screenshot/Ohmyfood1.png)
 Home page
-![App Screenshot](assets/screenshot/ohmyfood2.png)
+![App Screenshot](assets/screenshot/Ohmyfood2.png)
 Restaurant page 

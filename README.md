@@ -28,3 +28,7 @@ Home page <br>
 
 Restaurant page <br>
 <img src="assets/screenshot/Ohmyfood2.png" width="600" />
+
+## Author
+
+[Yacine D](https://github.com/Yacine-Di)

@@ -23,8 +23,8 @@ During this project I learnt how to use SCSS and how to display smooth animation
 
 
 ## Screenshots
-
-![App Screenshot](assets/screenshot/Ohmyfood1.png){: width="500" }
 Home page
-![App Screenshot](assets/screenshot/Ohmyfood2.png){: width="500" }
+<img src="assets/screenshot/Ohmyfood1.png" width="600" />
+
 Restaurant page 
+<img src="assets/screenshot/Ohmyfood2.png" width="600" />
